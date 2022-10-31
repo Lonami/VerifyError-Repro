@@ -1,0 +1,17 @@
+[package]
+name = "verifyerror"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+name = "uniffi_verifyerror"
+crate-type = ["cdylib"]
+
+[dependencies]
+uniffi = "0.21.0"
+
+[build-dependencies]
+uniffi_build = "0.21.0"
+
+[profile.release]
+lto = true

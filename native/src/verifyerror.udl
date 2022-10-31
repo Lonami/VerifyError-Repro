@@ -1,0 +1,29 @@
+[Error]
+enum NativeError {
+  "Initialization",
+};
+
+enum Formatting {
+    "Unknown",
+};
+
+dictionary TextFormat {
+    Formatting format;
+    i32 offset;
+    i32 length;
+    string? extra;
+};
+
+dictionary Message {
+    i32 id;
+    string sender;
+    string text;
+    timestamp date;
+    timestamp? edit_date;
+    sequence<TextFormat> formatting;
+};
+
+namespace verifyerror {
+    [Throws=NativeError]
+    Message get_message();
+};
